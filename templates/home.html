@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>MLCICD2</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style>
+
+    body {
+      background-image: url('https://pbs.twimg.com/media/FZYQRyiUsAAk8K1.jpg:large');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust the opacity here */
+      z-index: -1;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      color: rgb(255,255,255);
+    }
+
+    .login form {
+      margin-right: 20px;
+      color: rgb(255,255,255);
+    }
+
+    .login input {
+      display: block;
+      width: 100%;
+      padding: 5px;
+      background-color: transparent;
+      border: 1.6px solid rgb(0,0,0);
+      border-radius: 6px;
+      color: rgb(0,255,0);
+      font-size: 10px;
+    }
+    ::placeholder {
+      color: white;
+      opacity: 1; /* Firefox */
+    }
+    .prediction-text {
+      margin: 100px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      text-align: center;
+      font-size: 20px;
+      font-family: 'Arimo', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="login">
+      <form action="{{ url_for('predict') }}" method="post">
+        <h1>Boston House Price Predictor</h1>
+        <input type="text" name="CRIM" placeholder="CRIM per capita crime rate by town" required="required" size="70" /><br>
+        <input type="text" name="ZN" placeholder="ZN proportion of residential land zoned for lots over 25,000 sq.ft." required="required" size="70" /><br>
+        <input type="text" name="INDUS" placeholder="INDUS proportion of non-retail business acres per town" required="required" size="70" /><br>
+        <input type="text" name="CHAS" placeholder="CHAS Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)" required="required" size="70" /><br>
+        <input type="text" name="NOX" placeholder="NOX nitric oxides concentration (parts per 10 million)" required="required" size="70" /><br>
+        <input type="text" name="RM" placeholder="RM average number of rooms per dwelling" required="required" size="70" /><br>
+        <input type="text" name="Age" placeholder="AGE proportion of owner-occupied units built prior to 1940" required="required" size="70" /><br>
+        <input type="text" name="DIS" placeholder="DIS weighted distances to five Boston employment centres" required="required" size="70" /><br>
+        <input type="text" name="RAD" placeholder="RAD index of accessibility to radial highways" required="required" size="70" /><br>
+        <input type="text" name="TAX" placeholder="TAX full-value property-tax rate per 10,000usd" required="required" size="70" /><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO pupil-teacher ratio by town" required="required" size="70" /><br>
+        <input type="text" name="B" placeholder="B 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town" required="required" size="70" /><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT % lower status of the population" required="required" size="70" /><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </form>
+
+</div>
+  </div>
+   <!-- Prediction text container -->
+   <div class="prediction-text">
+    {{prediction_text}}
+  </div>
+</body>
+
+</html>
