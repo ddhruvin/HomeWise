@@ -1,4 +1,4 @@
-# Boston House Price Predictor 
+# HomeWise 
 
 # 1. Introduction 
 Project Report: Boston House Price Predictor - The Boston House Price Prediction Application is a web-based tool designed to predict housing prices in Boston 
