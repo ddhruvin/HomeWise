@@ -1,7 +1,7 @@
 # HomeWise 
 
 # 1. Introduction 
-Project Report: Boston House Price Predictor - The Boston House Price Prediction Application is a web-based tool designed to predict housing prices in Boston 
+It is a web-based tool designed to predict housing prices in Boston 
 using machine learning techniques.  -  It utilizes Flask, HTML, CSS, Python, and Docker to create a robust and scalable application. 
 # 2. Technologies Used 
 - Flask: A lightweight web framework in Python used for building the backend API and serving web pages. - HTML: Markup language for creating the structure and content of the web pages. - CSS: Styling language for designing the appearance and layout of the web pages. - Python: Programming language used for the machine learning model development and integration with Flask. - Linear Regression: Machine learning model employed for predicting house prices based on various features. - Docker: Containerization platform used to package the application and its dependencies into a standardized unit 
